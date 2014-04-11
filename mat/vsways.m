@@ -11,9 +11,9 @@ function vsways( m, vn, l, params )
     hold on;
     set( gca, 'FontSize',   params.fs );
     set( gca, 'FontWeight', params.fw );
-    colors = winter(4);
+    colors = winter(10);
     
-    deletions = 0;
+    deletions = 1;
     vt = [];
     vo = [];
     for n = vn
@@ -21,9 +21,9 @@ function vsways( m, vn, l, params )
         vt(end+1) = 100*t;
         vo(end+1) = 100*o;
     end
-    plot( vn, vo, 'Color', colors(1,:), 'LineWidth', params.lw, 'LineStyle', '--' );
-    
-    deletions = 1;
+    plot( vn, vo, 'Color', colors(3,:), 'LineWidth', params.lw );
+
+    deletions = 0;
     vt = [];
     vo = [];
     for n = vn
@@ -33,16 +33,6 @@ function vsways( m, vn, l, params )
     end
     plot( vn, vo, 'Color', colors(3,:), 'LineWidth', params.lw, 'LineStyle', '--' );
     
-    deletions = 0;
-    vt = [];
-    vo = [];
-    for n = vn
-        [ t, o ] = dleft( m, n, l, deletions );
-        vt(end+1) = 100*t;
-        vo(end+1) = 100*o;
-    end
-    plot( vn, vo, 'Color', colors(2,:), 'LineWidth', params.lw );
-    
     deletions = 1;
     vt = [];
     vo = [];
@@ -51,15 +41,25 @@ function vsways( m, vn, l, params )
         vt(end+1) = 100*t;
         vo(end+1) = 100*o;
     end
-    plot( vn, vo, 'Color', colors(4,:), 'LineWidth', params.lw );
+    plot( vn, vo, 'Color', colors(9,:), 'LineWidth', params.lw );
+    
+    deletions = 0;
+    vt = [];
+    vo = [];
+    for n = vn
+        [ t, o ] = dleft( m, n, l, deletions );
+        vt(end+1) = 100*t;
+        vo(end+1) = 100*o;
+    end
+    plot( vn, vo, 'Color', colors(9,:), 'LineWidth', params.lw, 'LineStyle', '--' );
     
     s = sprintf( 'table load = %.1f%%', 100*l );
     xlabel( 'ways per bucket' );
     ylabel( 'overflow usage' );
     title( s );
-    axis([ minways maxways, 0, 15 ] );
+    axis([ minways maxways, 0, 50 ] );
     ytickslabel;
-    legend( 'single, insertions only', 'single, with deletions', '2-left, insertions only', '2-left, with deletions' );
+    legend( 'single, with deletions', 'single, insertions only', '2-left, with deletions', '2-left, insertions only', 'Location', 'NorthEast' );
     print( gcf, '-depsc2', params.resolution, 'zplotways' );
 end
 
