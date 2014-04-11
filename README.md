@@ -86,13 +86,18 @@ The matlab code in this repository evaluates equations (7), (8), (9), and (10). 
 These are here just to double check. These programs simulate a hash table using random number generator to generate a sequence of bucket assignments. So far, the empirical results have matched the analytical results and both results have been compared against hash tables used in practice. So things look pretty solid. If you find a bug, do let me know.
 
 ##Results:
+###Overflows vs. Ways:
+Increasing the number of ways (or associativity) tends to reduce the number of overflows. In general, highly associative hash tables have very few overflows. The plot shows the percentage overflow, `o`, versus number of ways at 100% load, i.e. m*n elements inserted into the table, some fraction of those go to overflow.<br>
 <img src="./png/vsways.png" alt="Drawing" style="width: 600px;"/>
-<!-- ![Image](../blob/master/public_html/img/nokia.png?raw=true) -->
+
+###Overflows vs. Load:
+Increasing the load increases the overflows. The plot shows how much overflow, `o`, is required to achieve a table utilization, `t`, of a given amount. When the trend goes vertical, there is a diminishing return. With deletions, there is almost no way to completely fill the hash table: single hash can get to `t=95%` (at 35% overflow) and 2-left can get to `t=98%` (at about 10% overflow).<br>
+<img src="./png/vsload.png" alt="Drawing" style="width: 600px;"/>
 
 
 ##About me
 My name is Pete Stevenson.  
-You can send complaints, and improvements to me via email:  
+You can send complaints and improvements to me via email:  
 `etep` `dot` `nosnevets` `at` `gmail` `dot` `com`.  
 
 ##References
