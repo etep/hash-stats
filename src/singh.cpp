@@ -75,16 +75,16 @@ int main( int argc, char ** argv ) {
     double a = 0.8;
     
     const bool runInserts = true;
-    bool runDeletes = false;
+    bool runDeletes = true;
     
     const uint64_t ngen = 2;
     const uint64_t ninserts = uint64_t( a * double( m*n ) );
     
     table = new bool[ m*n ];
-    indices = new uint64_t[ m*n ];
+    indices = new uint64_t[ ninserts ];
 
     memset(   table, 0, m*n*sizeof( bool ) );
-    memset( indices, 0, m*n*sizeof( uint64_t ) );
+    memset( indices, 0, ninserts*sizeof( uint64_t ) );
     
     load = 0ULL;
     uint64_t u = 0ULL;

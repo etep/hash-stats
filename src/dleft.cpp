@@ -112,19 +112,19 @@ int main( int argc, char ** argv ) {
     const bool runDeletes = true;
     
     const uint64_t ngen = 2;
+    const uint64_t ninserts = uint64_t( l * double(m*n) );
     
     l_table = new bool[ m*n/2 ];
     r_table = new bool[ m*n/2 ];
-    indices = new uint64_t[ m*n ];
+    indices = new uint64_t[ ninserts ];
 
     memset( l_table, 0, m*n*sizeof( bool )/2 );
     memset( r_table, 0, m*n*sizeof( bool )/2 );
-    memset( indices, 0, m*n*sizeof( uint64_t ) );
+    memset( indices, 0, ninserts*sizeof( uint64_t ) );
     
     lload = 0ULL;
     rload = 0ULL;
     uint64_t u = 0ULL;
-    const uint64_t ninserts = uint64_t( l * double(m*n) );
 
     if( runInserts ) {
         for( uint64_t i = 0ULL; i < ninserts; i++ ) {
