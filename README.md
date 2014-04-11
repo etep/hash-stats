@@ -16,7 +16,7 @@ Surprisingly, this question receives very little treatment by the Wikipedia and 
 ##Forward Note & Acknowledgements:
 This is meant to be an introduction to the topic and a guide for practitioners. Specifically, it reduces theory to practice.
 
-I learned the most of this by reading a paper by Andrei Broder and Michael Mitzenmacher [1] and from a paper by Yossi Kanizo [2]. Mitzenmacher's bibliography is extensive and doubtless much more is covered there, i.e. if one has the need, time, and patience to read it all.
+I learned most of this by reading a paper by Andrei Broder and Michael Mitzenmacher [1] and from a paper by Yossi Kanizo [2]. Mitzenmacher's bibliography is extensive and doubtless much more is covered there, i.e. if one has the need, time, and patience to read it all.
 
 ##Notation:
 We will use the following notation:
