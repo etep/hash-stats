@@ -83,7 +83,11 @@ The matlab code in this repository evaluates equations (7), (8), (9), and (10). 
 `dleft.cpp`: 2-left-hash, empirically evaluates a overflows<br>
 
 
-This is here just to double check. These programs simulate a hash table using random number generator to generate a sequence of bucket assignments. So far, the empirical results have matched the analytical results and both results have been compared against hash tables used in practice. So things look pretty solid. If you find a bug, do let me know.
+These are here just to double check. These programs simulate a hash table using random number generator to generate a sequence of bucket assignments. So far, the empirical results have matched the analytical results and both results have been compared against hash tables used in practice. So things look pretty solid. If you find a bug, do let me know.
+
+##Results:
+<img src="./png/vsways.png" alt="Drawing" style="width: 600px;"/>
+<!-- ![Image](../blob/master/public_html/img/nokia.png?raw=true) -->
 
 
 ##About me
