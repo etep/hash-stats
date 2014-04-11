@@ -1,0 +1,24 @@
+clear;
+close all;
+
+m  = 1024;
+n  = 48;
+l  = 1.0;
+
+minways = 40;
+maxways = 60;
+minload = 0.8;
+maxload = 1.3;
+vn = minways:10:maxways;
+vl = minload:0.0025:maxload;
+
+params.fs = 16;       % font size
+params.lw = 4;        % line width
+params.fw = 'normal'; % font weight
+params.resolution = '-r400';
+
+% 1st figure: overflow versus number of ways
+% 2nd figure: overflow versus table load
+%vsways( m, vn, l, params );
+vsload( m, n, vl, params );
+
