@@ -90,8 +90,10 @@ These are here just to double check. These programs simulate a hash table using 
 Increasing the number of ways (or associativity) tends to reduce the number of overflows. In general, highly associative hash tables have very few overflows. The plot shows the percentage overflow, `o`, versus number of ways at 100% load, i.e. m*n elements inserted into the table, some fraction of those go to overflow.<br>
 <img src="./png/vsways.png" alt="Drawing" style="width: 600px;"/>
 
-###Overflows vs. Load:
-Increasing the load increases the overflows. The plot shows how much overflow, `o`, is required to achieve a table utilization, `t`, of a given amount. When the trend goes vertical, there is a diminishing return. With deletions, there is almost no way to completely fill the hash table: single hash can get to `t=95%` (at 35% overflow) and 2-left can get to `t=98%` (at about 10% overflow).<br>
+###Utilization Efficiency vs. Overflow Provision:
+Given some overflow provision, `o`, the following plot shows the maximum achievable table utilization, `t`. If `t` is not 100%, then there is some space remaining in the hash table when the overflow list is exhausted, i.e. the allocated resources are underutilized. On the other hand, there is (presumably) a much higher cost associated with handling overflows; in specific, it would be contradict our purpose to maintain an overflow list whose size is a large fraction of the hash table size.
+
+For insertions only, 2-left can achieve 100% efficiency with a very small overflow provision (about 2.5%). For the more realistic case including deletions, there are rapidly diminishing returns as the overflow provision is increased: (e.g.) for a single hash function, the table is just above 92% filled at 20% overflow.<br>
 <img src="./png/vsload.png" alt="Drawing" style="width: 600px;"/>
 
 
