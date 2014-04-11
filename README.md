@@ -79,8 +79,8 @@ The matlab code in this repository evaluates equations (7), (8), (9), and (10). 
 `plots.m`: uses the above two functions to generate some plots of overflows versus ways and table load
 
 ###cpp files:
-`singh.cpp`: single-hash, empirically evaluates a overflows<br>
-`dleft.cpp`: 2-left-hash, empirically evaluates a overflows<br>
+`singh.cpp`: single-hash, empirically evaluates overflows<br>
+`dleft.cpp`: 2-left-hash, empirically evaluates overflows<br>
 
 
 These are here just to double check. These programs simulate a hash table using random number generator to generate a sequence of bucket assignments. So far, the empirical results have matched the analytical results and both results have been compared against hash tables used in practice. So things look pretty solid. If you find a bug, do let me know.
