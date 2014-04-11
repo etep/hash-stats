@@ -21,7 +21,7 @@ function vsload( m, n, vl, params )
         vt(end+1) = 100*t;
         vo(end+1) = 100*o;
     end
-    plot( vt, vo, 'Color', colors(3,:), 'LineWidth', params.lw );
+    plot( vo, vt, 'Color', colors(3,:), 'LineWidth', params.lw );
     
     deletions = 0;
     vt = [];
@@ -31,7 +31,7 @@ function vsload( m, n, vl, params )
         vt(end+1) = 100*t;
         vo(end+1) = 100*o;
     end
-    plot( vt, vo, 'Color', colors(3,:), 'LineWidth', params.lw, 'LineStyle', '--' );
+    plot( vo, vt, 'Color', colors(3,:), 'LineWidth', params.lw, 'LineStyle', '--' );
         
     deletions = 1;
     vt = [];
@@ -41,7 +41,7 @@ function vsload( m, n, vl, params )
         vt(end+1) = 100*t;
         vo(end+1) = 100*o;
     end
-    plot( vt, vo, 'Color', colors(9,:), 'LineWidth', params.lw );
+    plot( vo, vt, 'Color', colors(9,:), 'LineWidth', params.lw );
     
     deletions = 0;
     vt = [];
@@ -51,20 +51,21 @@ function vsload( m, n, vl, params )
         vt(end+1) = 100*t;
         vo(end+1) = 100*o;
     end
-    plot( vt, vo, 'Color', colors(9,:), 'LineWidth', params.lw, 'LineStyle', '--' );
+    plot( vo, vt, 'Color', colors(9,:), 'LineWidth', params.lw, 'LineStyle', '--' );
     
     s = sprintf( 'ways per bucket = %d', n );
-    xlabel( 'table (non-overflow) utilization' );
-    ylabel( 'overflow provision required' );
+    ylabel( 'table utilization achieved' );
+    xlabel( 'overflow provision' );
     title( s );
-    axis([ 80 100.1, 0, 40 ]);
+    axis([ -.1 40, 80, 100.1 ]);
+    set( gca, 'XTick', 0:5:40 );
     ytickslabel;
     xtickslabel;
     legend( 'single, with deletions', ...
             'single, insertions only', ...
             '2-left, with deletions', ...
             '2-left, insertions only', ...
-            'Location', 'NorthWest' );
+            'Location', 'SouthEast' );
     print( gcf, '-depsc2', params.resolution, 'zplotload' );
 end
 
