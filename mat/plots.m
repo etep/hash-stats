@@ -8,7 +8,7 @@ l  = 1.0;
 minways = 1;
 maxways = 100;
 minload = 0.8;
-maxload = 1.3;
+maxload = 1.4;
 vn = minways:1:maxways;
 vl = minload:0.0025:maxload;
 
