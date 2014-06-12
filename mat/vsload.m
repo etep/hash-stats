@@ -66,7 +66,8 @@ function vsload( m, n, vl, params )
             '2-left, with deletions', ...
             '2-left, insertions only', ...
             'Location', 'SouthEast' );
-    print( gcf, '-depsc2', params.resolution, 'zplotload' );
+    plotname = sprintf( 'utilization_at_oom_%d_ways', n );
+    print( gcf, '-depsc2', params.resolution, plotname );
 end
 
 
