@@ -10,7 +10,7 @@ maxways = 100;
 minload = 0.8;
 maxload = 1.4;
 vn = minways:1:maxways;
-vl = minload:0.0025:maxload;
+vl = linspace( minload, maxload 100 );
 
 params.fs = 16;       % font size
 params.lw = 4;        % line width
