@@ -3,15 +3,15 @@ RELEASE = 1
 CC = g++
 
 ifdef RELEASE
-CFLAGS += -Wall -O3
+CFLAGS += -std=c++11 -Wall -O3 -flto
 else
-CFLGAS += -g -Wall
+CFLAGS += -std=c++11 -Wall -g
 endif
 
 ifdef MAC
 # if boost was installed by port
 CFLAGS += -I/opt/local/include/
-LFLAGS += -L/opt/local/lib
+LFLAGS += -L/opt/local/lib -flto
 endif
 
 LFLAGS += -Wall
