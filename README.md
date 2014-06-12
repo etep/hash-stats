@@ -1,11 +1,12 @@
 #hash-stats:
-###- things your mother never told you about hash tables -
+### Overflow and Table Utilization for Large Hash Tables
+#### (things your mother never told you about hash tables)
 <br>
 <br>
 
 ##The question:
 Given a hash table with m buckets, and n entries (hereafter, ways) per bucket, how many overflows are exptected
-after inserting a certain number of elements.
+after inserting a certain number of elements?
 
 Here, we answer this question, and also some related questions. Suppose you can allocate a certain amount of memory for a hash table, and that it cannot be resized. Any insertions that cannot find room in a given hash bucket are stored in an overflow list (i.e. treated separately). You would want to know the following: how much extra memory should I reserve for the overflow list.
 
